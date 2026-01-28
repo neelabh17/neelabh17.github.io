@@ -129,3 +129,142 @@ name {
 span.highlight {
   background-color: #ffffd0;
 }
+
+/* News Timeline Section */
+.news-section {
+  padding: 20px;
+  width: 100%;
+}
+
+.timeline {
+  position: relative;
+  padding: 0;
+  margin: 20px 0 10px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 100px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, #1772d0 0%, #333 100%);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-date {
+  width: 85px;
+  text-align: right;
+  padding-right: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1772d0;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 100px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: #222;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #ddd;
+}
+
+.timeline-content {
+  padding-left: 25px;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.timeline-content strong {
+  color: #333;
+}
+
+.timeline-content span {
+  color: #555;
+  font-size: 13px;
+}
+
+/* Ongoing Work Collapsible Section */
+.ongoing-work {
+  padding: 20px;
+  width: 100%;
+}
+
+.ongoing-work summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.ongoing-work summary::-webkit-details-marker {
+  display: none;
+}
+
+.ongoing-work summary::before {
+  content: '▶';
+  display: inline-block;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  color: #1772d0;
+}
+
+.ongoing-work[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.ongoing-work summary heading {
+  display: inline;
+}
+
+.ongoing-work-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding-left: 22px;
+}
+
+.ongoing-work[open] .ongoing-work-content {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 15px;
+}
+
+.ongoing-work-category {
+  margin-bottom: 12px;
+  padding-left: 5px;
+  border-left: 3px solid #1772d0;
+  padding-left: 12px;
+}
+
+.ongoing-work-category strong {
+  color: #333;
+  font-size: 14px;
+}
+
+.ongoing-work-category p {
+  margin: 4px 0 0 0;
+  color: #555;
+  font-size: 13px;
+}
